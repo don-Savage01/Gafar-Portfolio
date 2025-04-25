@@ -13,7 +13,7 @@ const Taskbar = () => {
     <div className="fixed bottom-0 left-0 right-0 p-3 flex justify-around items-center">
       {/* X (white on gray box) */}
       <a
-        href="https://x.com/iam_don_savage"
+        href="https://x.com/iam_donSavage"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:opacity-80"
@@ -25,7 +25,7 @@ const Taskbar = () => {
 
       {/* Threads (white on gray box) */}
       <a
-        href="https://www.threads.net/@yourusername"
+        href="https://www.threads.net/iam_don_savage"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:opacity-80"
