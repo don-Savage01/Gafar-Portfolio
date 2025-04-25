@@ -18,19 +18,19 @@ const Taskbar = () => {
         rel="noopener noreferrer"
         className="hover:opacity-80"
       >
-        <div className="bg-gray-800 p-2 rounded-md">
+        <div className="bg-gray-950 p-2 rounded-md">
           <SiX className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
       </a>
 
       {/* Threads (white on gray box) */}
       <a
-        href="https://www.threads.net/iam_don_savage"
+        href="https://www.threads.net/@iam_don_savage"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:opacity-80"
       >
-        <div className="bg-gray-800 p-2 rounded-md">
+        <div className="bg-gray-950 p-2 rounded-md">
           <SiThreads className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
       </a>
@@ -42,8 +42,8 @@ const Taskbar = () => {
         rel="noopener noreferrer"
         className="hover:opacity-80"
       >
-        <div className="bg-gray-800 p-2 rounded-md">
-          <SiFacebook className="text-xl sm:text-2xl md:text-3xl text-[#1877F2]" />
+        <div className="bg-blue-600 p-2 rounded-md">
+          <SiFacebook className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
       </a>
 
@@ -54,8 +54,8 @@ const Taskbar = () => {
         rel="noopener noreferrer"
         className="hover:opacity-80"
       >
-        <div className="bg-gray-800 p-2 rounded-md">
-          <SiWhatsapp className="text-xl sm:text-2xl md:text-3xl text-[#25D366]" />
+        <div className="bg-green-600 p-2 rounded-md">
+          <SiWhatsapp className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
       </a>
 
@@ -66,8 +66,8 @@ const Taskbar = () => {
         rel="noopener noreferrer"
         className="hover:opacity-80"
       >
-        <div className="bg-gray-800 p-2 rounded-md">
-          <SiLinkedin className="text-xl sm:text-2xl md:text-3xl text-[#0A66C2]" />
+        <div className="bg-blue-600 p-2 rounded-md">
+          <SiLinkedin className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
       </a>
     </div>
