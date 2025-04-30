@@ -28,11 +28,11 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
     },
     {
       id: 4,
-      title: "Packing List App",
+      title: "Travel List App",
       type: "Website",
       technologies: "React, JavaScipt, Html, Css",
       description:
-        "The Packing List App is a simple yet intuitive React-based tool designed to help users organize and manage travel items. It allows users to add, remove, and mark items as packed, with options to sort or clear the list. With a clean UI and responsive behavior, the app offers a smooth experience for travelers looking to stay organized and never forget essentials.",
+        "The Travel List App is a simple yet intuitive React-based tool designed to help users organize and manage travel items. It allows users to add, remove, and mark items as packed, with options to sort or clear the list. With a clean UI and responsive behavior, the app offers a smooth experience for travelers looking to stay organized and never forget essentials.",
     },
     {
       id: 5,

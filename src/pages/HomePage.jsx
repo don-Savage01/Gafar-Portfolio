@@ -20,7 +20,6 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-purple-800 via-indigo-700 to-gray-800 relative">
-      {/* Desktop Icons */}
       <aside className="w-24 flex flex-col items-center py-8 space-y-12 pt-20">
         <DesktopIcon
           icon={<FaFolder className="text-4xl text-yellow-400" />}
@@ -37,13 +36,13 @@ const HomePage = () => {
         <DesktopIcon
           icon={<FaFilePdf className="text-4xl text-red-500" />}
           label="Resume"
-          onClick={() => window.open("/resume.pdf", "_blank")}
+          onClick={() => window.open("/Gafar_Resume.pdf", "_blank")}
         />
-        <DesktopIcon
+        {/* <DesktopIcon
           icon={<FaGamepad className="text-4xl text-green-500" />}
           label="Game"
           onClick={() => window.open("/game", "_self")}
-        />
+        /> */}
       </aside>
 
       {/* Projects Window - 90% height with 10% top gap */}
@@ -79,8 +78,6 @@ const HomePage = () => {
           </div>
         </div>
       )}
-
-      {/* Taskbar */}
       <Taskbar />
     </div>
   );

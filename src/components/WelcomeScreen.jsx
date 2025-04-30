@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import profilePic from "../assets/profile.jpeg";
+import { useState } from "react";
 
 const WelcomeScreen = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleEnter = () => {
-    navigate("/home");
+    setIsLoading(true);
+    setTimeout(() => {
+      navigate("/home");
+    }, 500);
   };
 
   return (
@@ -20,7 +25,7 @@ const WelcomeScreen = () => {
         onClick={handleEnter}
         className="px-6 py-3 bg-gradient-to-br from-purple-900 to-indigo-800 text-white rounded-lg shadow-lg hover:bg-purple-100"
       >
-        Get Me In
+        {isLoading ? "Please wait..." : "Get Me In"}
       </button>
     </div>
   );
