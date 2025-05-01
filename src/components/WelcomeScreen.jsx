@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
   const handleEnter = () => {
     setIsLoading(true);
     setTimeout(() => {
-      navigate("/home", { replace: true });
+      navigate("/home");
     }, 500);
   };
 
