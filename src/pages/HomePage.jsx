@@ -83,7 +83,7 @@ const HomePage = () => {
 
       {showProjects && (
         <div className="fixed inset-0 z-50 flex justify-center items-end">
-          <div className="h-[88vh] w-full bg-gradient-to-b from-purple-700 via-indigo-600 to-gray-800 bg-opacity-95 p-4 animate-slide-up rounded-t-xl">
+          <div className="h-[83vh] w-full bg-gradient-to-b from-purple-700 via-indigo-600 to-gray-800 bg-opacity-95 p-4 animate-slide-up rounded-t-xl">
             <div className="max-w-6xl mx-auto h-full flex flex-col rounded-xl shadow-2xl overflow-hidden">
               <div className="flex justify-between items-center p-4 border-b border-gray-600">
                 <h2 className="text-xl font-bold text-white">
