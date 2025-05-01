@@ -48,7 +48,7 @@ const IntroScreen = () => {
           setIndex(index + 1);
         }, 80);
       } else {
-        // **Go to Welcome screen** after finishing
+        // Navigate to WelcomePage with REPLACE (no back history)
         timeout = setTimeout(
           () => navigate("/welcome", { replace: true }),
           3000
