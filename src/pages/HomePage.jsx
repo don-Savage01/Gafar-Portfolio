@@ -1,21 +1,47 @@
-import React, { useState } from "react";
-import { FaFolder, FaGithub, FaFilePdf, FaGamepad } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaFolder, FaGithub, FaFilePdf } from "react-icons/fa";
 import DesktopIcon from "../components/DesktopIcon";
 import Taskbar from "../components/Taskbar";
 import ProjectsPage from "./ProjectsPage";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [showProjects, setShowProjects] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    window.history.replaceState(null, "", "/home");
+
+    // 2. Handle physical back button press
+    const handleBackButton = (e) => {
+      if (showProjects) {
+        e.preventDefault();
+        closeProjects();
+      } else {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [showProjects]); // Re-run effect when modal state changes
 
   const openProjects = () => {
     setShowProjects(true);
     setSelectedProject(null);
+    // Add history entry when opening projects
+    window.history.pushState({ modalOpen: true }, "", "/home");
   };
 
   const closeProjects = () => {
     setShowProjects(false);
     setSelectedProject(null);
+    // Restore history state when closing projects
+    window.history.replaceState(null, "", "/home");
   };
 
   return (
@@ -38,21 +64,13 @@ const HomePage = () => {
           label="Resume"
           onClick={() => window.open("/Gafar_Resume.pdf", "_blank")}
         />
-        {/* <DesktopIcon
-          icon={<FaGamepad className="text-4xl text-green-500" />}
-          label="Game"
-          onClick={() => window.open("/game", "_self")}
-        /> */}
       </aside>
 
-      {/* Projects Window - 90% height with 10% top gap */}
+      {/* Projects Window */}
       {showProjects && (
         <div className="fixed inset-0 z-50">
-          {/* 10% top gap showing background */}
           <div className="h-[10%] w-full bg-transparent"></div>
-
-          {/* 90% projects content with slide-up animation */}
-          <div className="h-[90%] bg-gradient-to-b from-purple-700 via-indigo-600 to-gray-800  bg-opacity-95 p-6 animate-slide-up rounded-t-3xl shadow-2xl">
+          <div className="h-[90%] bg-gradient-to-b from-purple-700 via-indigo-600 to-gray-800 bg-opacity-95 p-6 animate-slide-up rounded-t-3xl shadow-2xl">
             <div className="max-w-6xl mx-auto h-full flex flex-col">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold text-white">
@@ -63,6 +81,7 @@ const HomePage = () => {
                 <button
                   onClick={closeProjects}
                   className="text-gray-300 hover:text-white text-lg"
+                  aria-label="Close projects"
                 >
                   ×
                 </button>
