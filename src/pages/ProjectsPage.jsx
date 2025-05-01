@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowLeft } from "react-icons/fa";
 
 const ProjectsPage = ({ onSelectProject, selectedProject }) => {
   const projects = [
@@ -45,38 +46,40 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
   ];
 
   return (
-    <div className="h-full w-full rounded-t-lg p-6 text-white">
+    <div className="h-full w-full rounded-t-lg p-6 text-white relative">
       {selectedProject ? (
-        <div className="h-full flex flex-col">
-          <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-          <p className="text-lg mb-2">{selectedProject.type}</p>
-          <p className="text-gray-300 mb-6">{selectedProject.technologies}</p>
-          <p className="text-gray-200 mb-6">{selectedProject.description}</p>
-          <div className="border-t border-gray-700 my-4"></div>
-          <button
-            onClick={() => onSelectProject(null)}
-            className="mt-auto px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors w-fit"
-          >
-            Back to Projects
-          </button>
+        <div className="h-full flex flex-col relative">
+          <div className="flex-1 overflow-y-auto pr-2">
+            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
+            <p className="text-lg mb-2">{selectedProject.type}</p>
+            <p className="text-gray-300 mb-6">{selectedProject.technologies}</p>
+            <p className="text-gray-200 mb-6">{selectedProject.description}</p>
+          </div>
+
+          <div className="absolute bottom-1 right-4">
+            <button
+              onClick={() => onSelectProject(null)}
+              className="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
+              title="Go Back"
+            >
+              <FaArrowLeft className="text-white text-lg" />
+            </button>
+          </div>
         </div>
       ) : (
-        <>
-          {/* <h2 className="text-2xl font-bold mb-6">Personal Projects</h2> */}
-          <div className="space-y-4 overflow-y-auto max-h-[calc(100%-3rem)]">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="p-4 border border-gray-700 cursor-pointer hover:bg-gray-800 rounded-lg bg-gray-900 bg-opacity-50 transition-colors"
-                onClick={() => onSelectProject(project)}
-              >
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-gray-300">{project.type}</p>
-                <p className="text-gray-400 text-sm">{project.technologies}</p>
-              </div>
-            ))}
-          </div>
-        </>
+        <div className="space-y-4 overflow-y-auto max-h-[calc(100%-3rem)]">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="p-4 border border-gray-700 cursor-pointer hover:bg-gray-800 rounded-lg bg-gray-900 bg-opacity-50 transition-colors"
+              onClick={() => onSelectProject(project)}
+            >
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <p className="text-gray-300">{project.type}</p>
+              <p className="text-gray-400 text-sm">{project.technologies}</p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

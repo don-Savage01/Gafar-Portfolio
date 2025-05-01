@@ -13,7 +13,6 @@ const HomePage = () => {
   useEffect(() => {
     window.history.replaceState(null, "", "/home");
 
-    // 2. Handle physical back button press
     const handleBackButton = (e) => {
       if (showProjects) {
         e.preventDefault();
@@ -28,19 +27,18 @@ const HomePage = () => {
     return () => {
       window.removeEventListener("popstate", handleBackButton);
     };
-  }, [showProjects]); // Re-run effect when modal state changes
+  }, [showProjects]);
 
   const openProjects = () => {
     setShowProjects(true);
     setSelectedProject(null);
-    // Add history entry when opening projects
+
     window.history.pushState({ modalOpen: true }, "", "/home");
   };
 
   const closeProjects = () => {
     setShowProjects(false);
     setSelectedProject(null);
-    // Restore history state when closing projects
     window.history.replaceState(null, "", "/home");
   };
 
@@ -66,7 +64,6 @@ const HomePage = () => {
         />
       </aside>
 
-      {/* Projects Window */}
       {showProjects && (
         <div className="fixed inset-0 z-50">
           <div className="h-[10%] w-full bg-transparent"></div>
