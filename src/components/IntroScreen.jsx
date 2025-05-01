@@ -7,7 +7,7 @@ const englishText = "Oh sorry you don't speak Chinese 😂";
 const IntroScreen = () => {
   const navigate = useNavigate();
   const [displayedText, setDisplayedText] = useState("");
-  const [phase, setPhase] = useState("typing-chinese"); // Track phase of animation
+  const [phase, setPhase] = useState("typing-chinese");
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const IntroScreen = () => {
         timeout = setTimeout(() => {
           setDisplayedText((prev) => prev + chineseText[index]);
           setIndex(index + 1);
-        }, 100);
+        }, 200);
       } else {
         timeout = setTimeout(() => {
           setPhase("deleting-chinese");
@@ -48,7 +48,11 @@ const IntroScreen = () => {
           setIndex(index + 1);
         }, 80);
       } else {
-        timeout = setTimeout(() => navigate("/welcome"), 3000);
+        // **Go to Welcome screen** after finishing
+        timeout = setTimeout(
+          () => navigate("/welcome", { replace: true }),
+          3000
+        );
       }
     }
 
@@ -59,17 +63,19 @@ const IntroScreen = () => {
     <div className="min-h-screen bg-black flex flex-col items-center justify-center text-2xl font-mono px-4 text-center">
       <img
         src="/images/intro.jpeg"
-        alt="Intro Image"
-        className="w-[150px] h-[150px] object-contain mb-6 rounded-lg"
+        alt="Intro"
+        className="w-[150px] h-[150px] object-contain mb-3 mt-[-20px] rounded-lg"
       />
-      {/* Text container fixed height */}
-      <div className="relative flex flex-col items-center justify-center">
+
+      <div className="relative flex flex-col items-center justify-center mt-[-10px]">
         <p
+          className="blinking-cursor"
           style={{
             fontFamily: "Readable",
             color: "white",
-            minHeight: "40px", // Fixed height to prevent movement
-            lineHeight: "40px", // Aligns text in the middle of that height
+            fontSize: phase === "typing-chinese" ? "1.2rem" : "1.5rem",
+            minHeight: "40px",
+            lineHeight: "40px",
           }}
         >
           {displayedText}
