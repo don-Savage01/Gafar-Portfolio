@@ -1,21 +1,34 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import profilePic from "../assets/profile.jpeg";
+import { useState } from "react";
 
-const WelcomePage = () => {
+const WelcomeScreen = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  const handleEnter = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      navigate("/home");
+    }, 500);
+  };
+
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center text-white p-4 text-center">
-      <h1 className="text-3xl font-bold mb-6">Welcome to My Portfolio</h1>
-      <p className="text-lg mb-8">Click below to enter</p>
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-purple-900 to-indigo-900 text-white text-center">
+      <img
+        src={profilePic}
+        alt="Profile"
+        className="w-32 h-32 rounded-full mb-6 border border-gray-300 shadow-lg"
+      />
+      <h1 className="text-3xl font-light mb-6">Welcome to my portfolio</h1>
       <button
-        onClick={() => navigate("/home", { replace: true })} // REPLACE history
-        className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg transition"
+        onClick={handleEnter}
+        className="px-6 py-3 bg-gradient-to-br from-purple-900 to-indigo-800 text-white rounded-lg shadow-lg hover:bg-purple-100"
       >
-        Get me in
+        {isLoading ? "Please wait..." : "Get Me In"}
       </button>
     </div>
   );
 };
 
-export default WelcomePage;
+export default WelcomeScreen;
