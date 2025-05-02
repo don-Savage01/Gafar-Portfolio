@@ -60,8 +60,8 @@ const Taskbar = () => {
       </a>
 
       {/* LinkedIn (brand color in gray box) */}
-      {/* <a
-        href="https://linkedin.com/in/yourusername"
+      <a
+        href="https://linkedin.com/in/Gafar Gbolahan"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:opacity-80"
@@ -69,7 +69,7 @@ const Taskbar = () => {
         <div className="bg-blue-600 p-2 rounded-md">
           <SiLinkedin className="text-xl sm:text-2xl md:text-3xl text-white" />
         </div>
-      </a> */}
+      </a>
     </div>
   );
 };

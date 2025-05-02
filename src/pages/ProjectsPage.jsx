@@ -4,43 +4,43 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
   const projects = [
     {
       id: 1,
-      title: "Fast Pizza",
+      title: "Pizza Pronto",
       type: "Website",
       technologies: "HTML, CSS, Javascript, React, TailwindCss",
       description:
-        "Fast Pizza is a modern single-page pizza ordering app built with React and styled using Tailwind CSS. It allows users to browse a live-updating menu fetched from a public API, manage their cart with Redux, and place orders with optional priority delivery. The app supports real-time address lookup using the browser's geolocation and reverse-geocoding APIs. Users can also track the status and ETA of their orders and search for any order by its ID, all within a responsive, mobile-friendly interface.",
+        "Pizza Pronto is a modern single-page pizza ordering app built with React and styled using Tailwind CSS. It allows users to browse a live-updating menu fetched from a public API, manage their cart with Redux, and place orders with optional priority delivery. The app supports real-time address lookup using the browser's geolocation and reverse-geocoding APIs. Users can also track the status and ETA of their orders and search for any order by its ID, all within a responsive, mobile-friendly interface.",
     },
     {
       id: 2,
-      title: "usePopcorn",
+      title: "Movie Munch",
       type: "Mobile App",
       technologies: "HTML, CSS, React, JavaScript, TailwindCss",
       description:
-        "usePopcorn is a lightweight movie discovery app built with React. It allows users to search for movies using the OMDB API, view key details about each film, and rate and mark movies as watched. The app maintains a persistent watched list, so users can revisit or modify their movie history anytime. It's designed to be fast, interactive, and beginner-friendly, making it a great example of handling APIs and state management in React.",
+        "Movie Munch is a lightweight movie discovery app built with React. It allows users to search for movies using the OMDB API, view key details about each film, and rate and mark movies as watched. The app maintains a persistent watched list, so users can revisit or modify their movie history anytime. It's designed to be fast, interactive, and beginner-friendly, making it a great example of handling APIs and state management in React.",
     },
     {
       id: 3,
-      title: "WorldWise",
+      title: "GlobeLog",
       type: "Mobile App",
       technologies: "React, JavaScript, TailwindCss, HTML",
       description:
-        "WorldWise is a travel-tracking single-page application built with React. It features an interactive world map where users can log cities they’ve visited, along with visit dates, notes, and custom emojis. The app includes a country-based organization of cities, fake authentication, and protected routes. It showcases advanced React patterns like context APIs for global state, lazy loading, dynamic routing, and geolocation integration for a rich user experience.",
+        "GlobeLog is a travel-tracking single-page application built with React. It features an interactive world map where users can log cities they’ve visited, along with visit dates, notes, and custom emojis. The app includes a country-based organization of cities, fake authentication, and protected routes. It showcases advanced React patterns like context APIs for global state, lazy loading, dynamic routing, and geolocation integration for a rich user experience.",
     },
     {
       id: 4,
-      title: "Travel List App",
+      title: "Pack Reminder",
       type: "Website",
       technologies: "React, JavaScipt, Html, Css",
       description:
-        "The Travel List App is a simple yet intuitive React-based tool designed to help users organize and manage travel items. It allows users to add, remove, and mark items as packed, with options to sort or clear the list. With a clean UI and responsive behavior, the app offers a smooth experience for travelers looking to stay organized and never forget essentials.",
+        "ThePack Reminder App is a simple yet intuitive React-based tool designed to help users organize and manage travel items. It allows users to add, remove, and mark items as packed, with options to sort or clear the list. With a clean UI and responsive behavior, the app offers a smooth experience for travelers looking to stay organized and never forget essentials.",
     },
     {
       id: 5,
-      title: "Split Bill App",
+      title: "Fair Share",
       type: "API",
       technologies: "React, Html, Vanila-Css, JavaScript",
       description:
-        "The Split Bill App is a React-based tool that simplifies shared expense tracking with friends. It displays each friend's balance, whether you owe them or they owe you. You can add friends with custom names and avatars, select a friend to split a bill, input the total amount and your share, and indicate who paid. The app then automatically updates balances to reflect the transaction.",
+        "The Fair Share App is a React-based tool that simplifies shared expense tracking with friends. It displays each friend's balance, whether you owe them or they owe you. You can add friends with custom names and avatars, select a friend to split a bill, input the total amount and your share, and indicate who paid. The app then automatically updates balances to reflect the transaction.",
     },
   ];
 
