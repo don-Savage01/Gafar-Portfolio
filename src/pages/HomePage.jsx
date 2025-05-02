@@ -51,7 +51,7 @@ const HomePage = () => {
   const closeProjects = () => {
     setShowProjects(false);
     setSelectedProject(null);
-    window.history.replaceState(null, "", "/home");
+    // window.history.replaceState(null, "", "/home");
   };
 
   return (
