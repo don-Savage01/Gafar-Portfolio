@@ -35,7 +35,6 @@ const HomePage = () => {
   }, [showProjects]);
 
   useEffect(() => {
-    // Prevent background scroll when modal is open
     document.body.style.overflow = showProjects ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
@@ -51,7 +50,6 @@ const HomePage = () => {
   const closeProjects = () => {
     setShowProjects(false);
     setSelectedProject(null);
-    // window.history.replaceState(null, "", "/home");
   };
 
   return (
@@ -86,11 +84,22 @@ const HomePage = () => {
           <div className="h-[83vh] w-full bg-gradient-to-b from-purple-700 via-indigo-600 to-gray-800 bg-opacity-95 p-4 animate-slide-up rounded-t-xl">
             <div className="max-w-6xl mx-auto h-full flex flex-col rounded-xl shadow-2xl overflow-hidden">
               <div className="flex justify-between items-center p-4 border-b border-gray-600">
-                <h2 className="text-xl font-bold text-white">
-                  {selectedProject
-                    ? selectedProject.title
-                    : "Personal Projects"}
-                </h2>
+                <div className="flex flex-col gap-2">
+                  {selectedProject && (
+                    <button
+                      onClick={() => setSelectedProject(null)}
+                      className="self-start text-xl px-1 text-gray-400 bg border border-purple-900 bg-transparent rounded-md hover:bg-gray-600 transition-colors"
+                    >
+                      &larr;
+                    </button>
+                  )}
+                  <h2 className="text-xl font-bold text-white">
+                    {selectedProject
+                      ? selectedProject.title
+                      : "Personal Projects"}
+                  </h2>
+                </div>
+
                 <button
                   onClick={closeProjects}
                   className="text-gray-300 hover:text-white text-2xl"
