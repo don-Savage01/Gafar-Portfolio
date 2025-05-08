@@ -13,6 +13,8 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
         "Pizza Pronto is a modern single-page pizza ordering app built with React and styled using Tailwind CSS. It allows users to browse a live-updating menu fetched from a public API, manage their cart with Redux, and place orders with optional priority delivery. The app supports real-time address lookup using the browser's geolocation and reverse-geocoding APIs. Users can also track the status and ETA of their orders and search for any order by its ID, all within a responsive, mobile-friendly interface.",
       frontView: "Next.js, JavaScript, React",
       icon: "/images/pizza-icon.png",
+      previewImage: "/images/pizza-ui.png",
+      projectLink: "https://pizza-pronto.netlify.app/",
     },
     {
       id: 2,
@@ -64,12 +66,29 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
             <h2 className="text-2xl font-sans mb-4 text-gray-200">
               About {selectedProject.title}
             </h2>
-            <p className="text-gray-300 mb-6 font-thin">
+            <p className="text-gray-300 mb-2 font-thin">
               {selectedProject.technologies}
             </p>
-            <p className="text-gray-200 font-extralight mb-6">
+            <p className="text-gray-200 font-large mb-4">
               {selectedProject.description}
             </p>
+            {selectedProject.previewImage && (
+              <div className="relative">
+                <img
+                  src={selectedProject.previewImage}
+                  alt={`${selectedProject.title} Preview`}
+                  className="w-full max-w-xl rounded-lg mx-auto mb-4 object-cover"
+                />
+                <a
+                  href={selectedProject.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-8 right-4 text-white text-[8px] bg-blue-500 px-1 py-1 rounded-lg hover:bg-orange-400"
+                >
+                  Access Project
+                </a>
+              </div>
+            )}
           </div>
         </div>
       ) : (
