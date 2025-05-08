@@ -88,7 +88,7 @@ const HomePage = () => {
                   {selectedProject && (
                     <button
                       onClick={() => setSelectedProject(null)}
-                      className="self-start text-xl px-1 text-gray-400 bg border border-purple-900 bg-transparent rounded-md hover:bg-gray-600 transition-colors"
+                      className="self-start text-xl px-1 text-white bg border border-purple-900 bg-transparent rounded-md hover:bg-gray-600 transition-colors"
                     >
                       &larr;
                     </button>
