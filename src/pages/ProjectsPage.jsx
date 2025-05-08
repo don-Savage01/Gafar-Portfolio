@@ -83,7 +83,7 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
                   href={selectedProject.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-8 sm:bottom-9 md:bottom-8 lg:bottom-10 right-4 sm:right-7 text-white text-[7px] sm:text-[8px] lg:text-[12px] bg-blue-500 px-1 py-1 rounded-lg hover:bg-orange-400"
+                  className="absolute bottom-8 sm:bottom-9 md:bottom-8 lg:bottom-10 right-4 sm:right-7 text-white text-[7px] sm:text-[8px] lg:text-[12px] bg-gradient-to-r from-purple-500 to-indigo-500 px-1 py-1 rounded-lg hover:bg-orange-400"
                 >
                   Access Project
                 </a>
