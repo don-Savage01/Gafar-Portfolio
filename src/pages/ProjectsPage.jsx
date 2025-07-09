@@ -25,6 +25,8 @@ const ProjectsPage = ({ onSelectProject, selectedProject }) => {
         "Movie Munch is a lightweight movie discovery app built with React. It allows users to search for movies using the OMDB API, view key details about each film, and rate and mark movies as watched. The app maintains a persistent watched list, so users can revisit or modify their movie history anytime. It's designed to be fast, interactive, and beginner-friendly, making it a great example of handling APIs and state management in React.",
       frontView: "JavaScript, Next.js",
       icon: "/images/movie-munch.jpeg",
+      previewImage: "/images/movie-ui.png",
+      projectLink: "https://movienetw.netlify.app/",
     },
     {
       id: 3,
