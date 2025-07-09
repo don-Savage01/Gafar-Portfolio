@@ -70,7 +70,7 @@ const HomePage = () => {
         <DesktopIcon
           icon={<FaFilePdf className="text-4xl text-red-500" />}
           label="Resume"
-          onClick={() => window.open("/Gafar_Resume.pdf", "_blank")}
+          onClick={() => window.open("/GafarG_Resume.pdf", "_blank")}
         />
         <DesktopIcon
           icon={<FaQuestionCircle className="text-4xl text-blue-400" />}
